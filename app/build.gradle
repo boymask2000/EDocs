@@ -42,4 +42,12 @@ dependencies {
     implementation 'com.squareup.okio:okio:3.0.0-alpha.9'
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
 
+
+    implementation 'org.jmrtd:jmrtd:0.7.18'
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'com.github.mhshams:jnbis:1.1.0'
+ //   implementation 'com.gemalto.jp2:jp2-android:1.0.3'
+    implementation 'net.sf.scuba:scuba-sc-android:0.0.18'
+
+
 }

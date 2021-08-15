@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.boymask.edocs.passport.PassportActivity;
+
 public class EDocs extends AppCompatActivity {
 
     private TextView serverAddr;
@@ -50,6 +52,16 @@ public class EDocs extends AppCompatActivity {
             // incrementing the value of textView
             public void onClick( View view ) {
                 Intent intent = new Intent(EDocs.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button passaporto = (Button)findViewById(R.id.passaporto);
+        passaporto.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            // incrementing the value of textView
+            public void onClick( View view ) {
+                Intent intent = new Intent(EDocs.this, PassportActivity.class);
                 startActivity(intent);
             }
         });

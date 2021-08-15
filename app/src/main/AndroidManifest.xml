@@ -18,10 +18,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".passport.ResultActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".SettingsActivity"
             android:exported="true"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".EDocs"/>
+            android:parentActivityName=".EDocs" />
         <activity
             android:name=".EDocs"
             android:exported="true">
@@ -34,6 +38,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <!--
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
             </intent-filter>
@@ -41,7 +46,21 @@
             <meta-data
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
+        -->
         </activity>
-    </application>
+        <activity
+            android:name=".passport.PassportActivity"
+            android:exported="true" >
+
+           <intent-filter>
+               <action android:name="android.nfc.action.TECH_DISCOVERED" />
+           </intent-filter>
+
+           <meta-data
+               android:name="android.nfc.action.TECH_DISCOVERED"
+               android:resource="@xml/nfc_tech_filter" />
+
+       </activity>
+   </application>
 
 </manifest>

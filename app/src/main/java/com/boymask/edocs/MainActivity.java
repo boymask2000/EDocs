@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
                 NfcAdapter.EXTRA_SECURE_ELEMENT_NAME //
 
         };
-
+/*
         for (int i = 0; i < codes.length; i++) {
             Tag tag = getIntent().getParcelableExtra(codes[i]);
             System.out.println(codes[i]);
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
 
             }
         }
-
+*/
 
     }
 
@@ -121,19 +121,6 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
         publish.append(s);
     }
 
-
-/*
-    public void onPause() {
-        super.onPause();
-        mAdapter.disableForegroundDispatch(this);
-    }
-
-    public void onResume() {
-        super.onResume();
-        mAdapter.enableForegroundDispatch(this, pendingIntent, intentFiltersArray, techListsArray);
-
-    }
-    */
 
     @Override
     public void onPause() {
@@ -144,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
     @Override
     public void onResume() {
         super.onResume();
-
+/*
         Bundle options = new Bundle();
         options.putInt(NfcAdapter.EXTRA_READER_PRESENCE_CHECK_DELAY, 500);
 
@@ -153,6 +140,16 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
                 NfcAdapter.FLAG_READER_NFC_BARCODE |
                         NfcAdapter.FLAG_READER_NFC_A |
                         NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK, options);
+
+*/
+        NfcAdapter adapter = NfcAdapter.getDefaultAdapter(this);
+        if (adapter != null) {
+            Intent intent = new Intent(getApplicationContext(), this.getClass());
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            String[][] filter = new String[][]{new String[]{"android.nfc.tech.IsoDep"}};
+            adapter.enableForegroundDispatch(this, pendingIntent, null, filter);
+        }
     }
 
     public void onNewIntent(Intent intent) {
@@ -386,27 +383,6 @@ public class MainActivity extends AppCompatActivity implements NfcAdapter.Reader
         return Integer.parseInt(hex, 16);
     }
 
-    /*
-    if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
-    Tag tag = intent.getExtras().getParcelable(NfcAdapter.EXTRA_TAG);
-    if (Arrays.asList(tag.getTechList()).contains("android.nfc.tech.IsoDep")) {
-      SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-      String passportNumber = preferences.getString(KEY_PASSPORT_NUMBER, null);
-      String expirationDate = convertDate(preferences.getString(KEY_EXPIRATION_DATE, null));
-      String birthDate = convertDate(preferences.getString(KEY_BIRTH_DATE, null));
-      if (passportNumber != null && !passportNumber.isEmpty()
-          && expirationDate != null && !expirationDate.isEmpty()
-          && birthDate != null && !birthDate.isEmpty()) {
-        BACKeySpec bacKey = new BACKey(passportNumber, birthDate, expirationDate);
-        new ReadTask(IsoDep.get(tag), bacKey).execute();
-        mainLayout.setVisibility(View.GONE);
-        loadingLayout.setVisibility(View.VISIBLE);
-      } else {
-        Snackbar.make(passportNumberView, R.string.error_input, Snackbar.LENGTH_SHORT).show();
-      }
-    }
-  }
-     */
     private byte[] execToIsodep(IsoDep isoDep, String c) {
         byte[] cmd = hexStringToByteArray(c);
         byte[] result = new byte[0];

@@ -7,7 +7,18 @@ public class CardData {
     private String nome;
     private String dataNascita;
     private String sex;
+
     private String codFiscale;
+    private String state;
+    private String nationality;
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
 
     public String getDataInizioValidita() {
         return dataInizioValidita;
@@ -23,6 +34,14 @@ public class CardData {
 
     public void setDataFineValidita(String dataFineValidita) {
         this.dataFineValidita = dataFineValidita;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getCognome() {

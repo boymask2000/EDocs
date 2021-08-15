@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/GiovanniPosabella/StudioProjects/EDocs/app/src/main/res/drawable-xxxhdpi/linear_divider.xml" value="0.1296875" />
+        <entry key="..\:/Users/GiovanniPosabella/StudioProjects/EDocs/app/src/main/res/layout/activity_edocs.xml" value="0.264" />
+        <entry key="..\:/Users/GiovanniPosabella/StudioProjects/EDocs/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/GiovanniPosabella/StudioProjects/EDocs/app/src/main/res/layout/activity_passport.xml" value="0.4" />
+        <entry key="..\:/Users/GiovanniPosabella/StudioProjects/EDocs/app/src/main/res/layout/activity_result.xml" value="0.13360507246376813" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19635416666666666" />
         <entry key="app/src/main/res/layout/activity_edocs.xml" value="0.34615384615384615" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />

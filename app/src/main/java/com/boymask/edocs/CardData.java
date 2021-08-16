@@ -1,5 +1,7 @@
 package com.boymask.edocs;
 
+import android.graphics.Bitmap;
+
 public class CardData {
 
     private String docNumber;
@@ -13,6 +15,9 @@ public class CardData {
     private String codFiscale;
     private String state;
     private String nationality;
+
+
+    private Bitmap photo;
 
     public String getNationality() {
         return nationality;
@@ -104,5 +109,13 @@ public class CardData {
                 ", sex='" + sex + '\'' +
                 ", codFiscale='" + codFiscale + '\'' +
                 '}';
+    }
+
+    public void setPhoto(Bitmap b) {
+        photo=b;
+    }
+
+    public Bitmap getPhoto() {
+        return photo;
     }
 }

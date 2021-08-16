@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.boymask.edocs.CardData;
@@ -46,6 +47,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
     private TextView stato;
     private TextView nazione;
     private TextView numdocumento;
+    private ImageView imageView;
     private CardData data;
 
     @Override
@@ -63,7 +65,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
         stato = (TextView) findViewById(R.id.stato);
         nazione = (TextView) findViewById(R.id.nazione);
         numdocumento = (TextView) findViewById(R.id.numdocumento);
-
+        imageView=(ImageView)findViewById(R.id.imageView);
 
         publish = (TextView) findViewById(R.id.publish);
         Button ok = (Button) findViewById(R.id.ok);
@@ -159,6 +161,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
                 stato.setText(data.getState());
                 nazione.setText(data.getNationality());
                 numdocumento.setText(data.getDocNumber());
+                imageView.setImageBitmap(data.getPhoto());
             }
         });
     }

@@ -6,15 +6,15 @@ import static org.jmrtd.PassportService.NORMAL_MAX_TRANCEIVE_LENGTH;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import android.nfc.tech.IsoDep;
 import android.os.AsyncTask;
-import android.util.Base64;
+
 import android.util.Log;
-import android.view.View;
 
 import com.boymask.edocs.CardData;
-import com.boymask.edocs.R;
-import com.google.android.material.snackbar.Snackbar;
+import com.gemalto.jp2.JP2Decoder;
 
 import net.sf.scuba.smartcards.CardFileInputStream;
 import net.sf.scuba.smartcards.CardService;
@@ -38,7 +38,6 @@ import org.jmrtd.lds.icao.DG2File;
 import org.jmrtd.lds.icao.MRZInfo;
 import org.jmrtd.lds.iso19794.FaceImageInfo;
 import org.jmrtd.lds.iso19794.FaceInfo;
-
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.InputStream;
@@ -60,6 +59,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+
 public class ReadTask extends AsyncTask<Void, Void, Exception> {
     private boolean encodePhotoToBase64 = false;
     private static final String TAG = "Reader";
@@ -76,7 +76,7 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
     private Bitmap bitmap;
     private boolean chipAuthSucceeded = false;
     private boolean passiveAuthSuccess = false;
-
+    private Bitmap photo;
     private byte[] dg14Encoded = new byte[0];
 
 
@@ -248,10 +248,12 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
                 byte[] buffer = new byte[imageLength];
                 dataInputStream.readFully(buffer, 0, imageLength);
                 InputStream inputStream = new ByteArrayInputStream(buffer, 0, imageLength);
+               photo = BitmapFactory.decodeByteArray(buffer,0,imageLength);
+                photo = new JP2Decoder(buffer).decode();
 
-                bitmap = ImageUtil.decodeImage(
-                        parent, faceImageInfo.getMimeType(), inputStream);
-                imageBase64 = Base64.encodeToString(buffer, Base64.DEFAULT);
+            //    bitmap = ImageUtil.decodeImage(
+             //           parent, faceImageInfo.getMimeType(), inputStream);
+              //  imageBase64 = Base64.encodeToString(buffer, Base64.DEFAULT);
             }
 
         } catch (Exception e) {
@@ -291,6 +293,7 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
             data.setDocNumber(mrzInfo.getDocumentNumber());
             String op1 = mrzInfo.getOptionalData1();
             String s2 =  mrzInfo.getOptionalData2();
+            data.setPhoto(photo);
 String s3 = mrzInfo.getPersonalNumber();
 
         ((PassportActivity)parent).showResult(data);

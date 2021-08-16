@@ -287,6 +287,11 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
             data.setSex(mrzInfo.getGender().toString());
             data.setState(mrzInfo.getIssuingState());
             data.setNationality(mrzInfo.getNationality());
+            data.setDataNascita(mrzInfo.getDateOfBirth());
+            data.setDocNumber(mrzInfo.getDocumentNumber());
+            String op1 = mrzInfo.getOptionalData1();
+            String s2 =  mrzInfo.getOptionalData2();
+String s3 = mrzInfo.getPersonalNumber();
 
         ((PassportActivity)parent).showResult(data);
 

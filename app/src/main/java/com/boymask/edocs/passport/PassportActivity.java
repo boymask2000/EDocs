@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.boymask.edocs.CardData;
 import com.boymask.edocs.R;
+import com.boymask.edocs.Util;
 import com.boymask.edocs.net.DataSender;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -44,6 +45,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
     private TextView publish;
     private TextView stato;
     private TextView nazione;
+    private TextView numdocumento;
     private CardData data;
 
     @Override
@@ -60,6 +62,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
         validato = (TextView) findViewById(R.id.validato);
         stato = (TextView) findViewById(R.id.stato);
         nazione = (TextView) findViewById(R.id.nazione);
+        numdocumento = (TextView) findViewById(R.id.numdocumento);
 
 
         publish = (TextView) findViewById(R.id.publish);
@@ -149,12 +152,13 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
                 cognome.setText(data.getCognome());
                 nome.setText(data.getNome());
                 codfiscale.setText(data.getCodFiscale());
-                datanascita.setText(data.getDataNascita());
+                datanascita.setText(Util.convertDateToFull(data.getDataNascita()));
                 sesso.setText(data.getSex());
                 validafrom.setText(data.getDataInizioValidita());
                 validato.setText(data.getDataFineValidita());
                 stato.setText(data.getState());
                 nazione.setText(data.getNationality());
+                numdocumento.setText(data.getDocNumber());
             }
         });
     }

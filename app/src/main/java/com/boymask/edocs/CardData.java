@@ -1,6 +1,8 @@
 package com.boymask.edocs;
 
 public class CardData {
+
+    private String docNumber;
     private String dataInizioValidita;
     private String dataFineValidita;
     private String cognome;
@@ -34,6 +36,13 @@ public class CardData {
 
     public void setDataFineValidita(String dataFineValidita) {
         this.dataFineValidita = dataFineValidita;
+    }
+    public String getDocNumber() {
+        return docNumber;
+    }
+
+    public void setDocNumber(String docNumber) {
+        this.docNumber = docNumber;
     }
 
     public String getState() {

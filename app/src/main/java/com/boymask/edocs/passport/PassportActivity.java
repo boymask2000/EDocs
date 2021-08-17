@@ -21,6 +21,7 @@ import com.boymask.edocs.R;
 import com.boymask.edocs.Util;
 import com.boymask.edocs.net.DataSender;
 import com.google.android.material.snackbar.Snackbar;
+import com.litetech.libs.restservicelib.RestService;
 
 import org.jmrtd.BACKey;
 import org.jmrtd.BACKeySpec;
@@ -30,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class PassportActivity extends AppCompatActivity implements NfcAdapter.ReaderCallback {
+public class PassportActivity extends AppCompatActivity implements NfcAdapter.ReaderCallback, RestService.CallBack {
     private NfcAdapter mAdapter;
     private PendingIntent pendingIntent;
     private IntentFilter[] intentFiltersArray;
@@ -65,7 +66,7 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
         stato = (TextView) findViewById(R.id.stato);
         nazione = (TextView) findViewById(R.id.nazione);
         numdocumento = (TextView) findViewById(R.id.numdocumento);
-        imageView=(ImageView)findViewById(R.id.imageView);
+        imageView = (ImageView) findViewById(R.id.imageView);
 
         publish = (TextView) findViewById(R.id.publish);
         Button ok = (Button) findViewById(R.id.ok);
@@ -156,8 +157,8 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
                 codfiscale.setText(data.getCodFiscale());
                 datanascita.setText(Util.convertDateToFull(data.getDataNascita()));
                 sesso.setText(data.getSex());
-                validafrom.setText(data.getDataInizioValidita());
-                validato.setText(data.getDataFineValidita());
+                validafrom.setText(Util.convertDateToFull(data.getDataInizioValidita()));
+                validato.setText(Util.convertDateToFull(data.getDataFineValidita()));
                 stato.setText(data.getState());
                 nazione.setText(data.getNationality());
                 numdocumento.setText(data.getDocNumber());
@@ -178,5 +179,12 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
                 NfcAdapter.FLAG_READER_NFC_BARCODE |
                         NfcAdapter.FLAG_READER_NFC_A |
                         NfcAdapter.FLAG_READER_SKIP_NDEF_CHECK, options);
+    }
+
+    @Override
+    public void onResult(String s, String s1) {
+
+        System.out.println("onResult: "+s);
+        System.out.println("onResult: "+s1);
     }
 }

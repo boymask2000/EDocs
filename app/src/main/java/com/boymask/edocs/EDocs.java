@@ -44,7 +44,7 @@ public class EDocs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+/*
         Button tesseraSanitaria = (Button)findViewById(R.id.tessera_sanitaria);
         tesseraSanitaria.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +55,7 @@ public class EDocs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+  */
         Button passaporto = (Button)findViewById(R.id.passaporto);
         passaporto.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -248,7 +248,7 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
                 byte[] buffer = new byte[imageLength];
                 dataInputStream.readFully(buffer, 0, imageLength);
                 InputStream inputStream = new ByteArrayInputStream(buffer, 0, imageLength);
-               photo = BitmapFactory.decodeByteArray(buffer,0,imageLength);
+         //      photo = BitmapFactory.decodeByteArray(buffer,0,imageLength);
                 photo = new JP2Decoder(buffer).decode();
 
             //    bitmap = ImageUtil.decodeImage(
@@ -288,6 +288,8 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
             data.setNome(mrzInfo.getSecondaryIdentifier().replace("<", " "));
             data.setSex(mrzInfo.getGender().toString());
             data.setState(mrzInfo.getIssuingState());
+            data.setDataFineValidita(mrzInfo.getDateOfExpiry());
+      //      data.setDataInizioValidita(mrzInfo.getIss);
             data.setNationality(mrzInfo.getNationality());
             data.setDataNascita(mrzInfo.getDateOfBirth());
             data.setDocNumber(mrzInfo.getDocumentNumber());

@@ -5,7 +5,8 @@
         <EditTextPreference
             app:key="server"
             app:title="@string/server_address"
-            app:useSimpleSummaryProvider="true" />
+            app:useSimpleSummaryProvider="true"
+            app:positiveButtonText="Ok"/>
 <!--
         <ListPreference
             app:defaultValue="reply"

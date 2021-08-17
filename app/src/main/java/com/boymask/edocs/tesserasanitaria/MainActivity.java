@@ -1,25 +1,24 @@
-package com.boymask.edocs;
+package com.boymask.edocs.tesserasanitaria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Color;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
 import android.nfc.tech.NfcA;
 import android.nfc.tech.NfcF;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.boymask.edocs.CardData;
+import com.boymask.edocs.R;
 import com.boymask.edocs.net.DataSender;
-import com.google.gson.Gson;
 import com.litetech.libs.restservicelib.RestService;
 
 

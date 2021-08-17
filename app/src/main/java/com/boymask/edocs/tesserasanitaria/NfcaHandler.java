@@ -1,4 +1,4 @@
-package com.boymask.edocs;
+package com.boymask.edocs.tesserasanitaria;
 
 import android.nfc.tech.IsoDep;
 

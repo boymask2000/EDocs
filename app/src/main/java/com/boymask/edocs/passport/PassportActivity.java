@@ -39,10 +39,10 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
 
     private TextView cognome;
     private TextView nome;
-    private TextView codfiscale;
+ //   private TextView codfiscale;
     private TextView datanascita;
     private TextView sesso;
-    private TextView validafrom;
+
     private TextView validato;
     private TextView publish;
     private TextView stato;
@@ -58,10 +58,10 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
 
         cognome = (TextView) findViewById(R.id.cognome);
         nome = (TextView) findViewById(R.id.nome);
-        codfiscale = (TextView) findViewById(R.id.codfiscale);
+   //     codfiscale = (TextView) findViewById(R.id.codfiscale);
         datanascita = (TextView) findViewById(R.id.datanascita);
         sesso = (TextView) findViewById(R.id.sesso);
-        validafrom = (TextView) findViewById(R.id.validafrom);
+
         validato = (TextView) findViewById(R.id.validato);
         stato = (TextView) findViewById(R.id.stato);
         nazione = (TextView) findViewById(R.id.nazione);
@@ -154,10 +154,10 @@ public class PassportActivity extends AppCompatActivity implements NfcAdapter.Re
             public void run() {
                 cognome.setText(data.getCognome());
                 nome.setText(data.getNome());
-                codfiscale.setText(data.getCodFiscale());
+          //      codfiscale.setText(data.getCodFiscale());
                 datanascita.setText(Util.convertDateToFull(data.getDataNascita()));
                 sesso.setText(data.getSex());
-                validafrom.setText(Util.convertDateToFull(data.getDataInizioValidita()));
+
                 validato.setText(Util.convertDateToFull(data.getDataFineValidita()));
                 stato.setText(data.getState());
                 nazione.setText(data.getNationality());

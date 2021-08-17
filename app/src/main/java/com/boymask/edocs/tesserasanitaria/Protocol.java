@@ -1,4 +1,4 @@
-package com.boymask.edocs;
+package com.boymask.edocs.tesserasanitaria;
 
 public class Protocol {
     public static String parseProtocolParameters(StringBuilder sb, byte[] uid,

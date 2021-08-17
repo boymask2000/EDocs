@@ -8,46 +8,47 @@
 
     <TextView
         android:id="@+id/numdocumento"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nazione" />
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+
         android:text="Num.Documento"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+
         android:text="Nazionalità"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+
         android:text="Stato"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+
+        android:layout_marginStart="24dp"
         android:text="Cognome"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <TextView
@@ -55,54 +56,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cod. Fiscale"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Data Nascita"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sesso"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Valida Da"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:text="Valida fino a"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        android:text="Scadenza"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
 
     <TextView
         android:id="@+id/cognome"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="@+id/nome"
         app:layout_constraintTop_toTopOf="@+id/textView13" />
 
@@ -110,58 +97,50 @@
         android:id="@+id/nome"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/codfiscale"
-        app:layout_constraintTop_toBottomOf="@+id/cognome" />
-
-    <TextView
-        android:id="@+id/codfiscale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/datanascita"
-        app:layout_constraintTop_toBottomOf="@+id/nome" />
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/datanascita"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/sesso"
-        app:layout_constraintTop_toBottomOf="@+id/codfiscale" />
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
+
 
     <TextView
         android:id="@+id/sesso"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/validafrom"
-        app:layout_constraintTop_toBottomOf="@+id/datanascita" />
-
-    <TextView
-        android:id="@+id/validafrom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/validato"
-        app:layout_constraintTop_toBottomOf="@+id/sesso" />
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/validato"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/validafrom" />
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/stato"
+        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
     <TextView
         android:id="@+id/stato"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/validato" />
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/nazione"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
     <TextView
         android:id="@+id/nazione"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stato" />
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/numdocumento"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <Button
         android:id="@+id/ok"

@@ -272,17 +272,17 @@ public class ReadTask extends AsyncTask<Void, Void, Exception> {
             if (parent.getCallingActivity() != null) {
                 intent = new Intent();
             } else {
-                intent = new Intent(parent, ResultActivity.class);
+     //           intent = new Intent(parent, ResultActivity.class);
             }
 
             MRZInfo mrzInfo = dg1File.getMRZInfo();
-
+/*
             intent.putExtra(ResultActivity.KEY_FIRST_NAME, mrzInfo.getSecondaryIdentifier().replace("<", " "));
             intent.putExtra(ResultActivity.KEY_LAST_NAME, mrzInfo.getPrimaryIdentifier().replace("<", " "));
             intent.putExtra(ResultActivity.KEY_GENDER, mrzInfo.getGender().toString());
             intent.putExtra(ResultActivity.KEY_STATE, mrzInfo.getIssuingState());
             intent.putExtra(ResultActivity.KEY_NATIONALITY, mrzInfo.getNationality());
-
+*/
             CardData data = new CardData();
             data.setCognome(mrzInfo.getPrimaryIdentifier().replace("<", " "));
             data.setNome(mrzInfo.getSecondaryIdentifier().replace("<", " "));
@@ -313,6 +313,7 @@ String s3 = mrzInfo.getPersonalNumber();
             } else {
                 chipAuthStr = "Fail";//parent.getString(R.string.failed);
             }
+            /*
             intent.putExtra(ResultActivity.KEY_PASSIVE_AUTH, passiveAuthStr);
             intent.putExtra(ResultActivity.KEY_CHIP_AUTH, chipAuthStr);
 
@@ -328,6 +329,8 @@ String s3 = mrzInfo.getPersonalNumber();
                             Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, false));
                 }
             }
+            */
+
 if(1<2)return;
             if (parent.getCallingActivity() != null) {
                 parent.setResult(Activity.RESULT_OK, intent);
